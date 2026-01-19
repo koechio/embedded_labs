@@ -12,6 +12,12 @@ UBRR0L = UBRRL_VALUE;
 #endif
                                   /* Enable USART transmitter/receiver */
 UCSR0B = (1 << TXEN0) | (1 << RXEN0);
-UCSR0C = (1 << UPM01) | (1 << UCSZ01) | (1 << UCSZ00);   /* 8 data bits, 1 stop bit */
+UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);   /* 8 data bits, 1 stop bit */
 
 }
+void transmitByte(uint8_t data){
+    while (!(UCSR0A & (1 << UDRE0))) {
+    // Waits for UDRE0 to be empty
+    }
+    UDR0 = data; // send data
+};

@@ -1,11 +1,11 @@
 
 # Project Settings
 MCU = atmega168
-F_CPU = 8000000
+F_CPU = 5333333
 BAUD = 9600
 PROGRAMMER = usbtiny
 TARGET = main
-SOURCES = main.c USART.c
+SOURCES = main.c my_usart.c
 
 # Compiler and Tool Settings
 CC = avr-gcc
